@@ -1,52 +1,22 @@
-from flask import Flask, request
+from flask import Flask, request, redirect, render_template, session, flash, json
 import myCaesar 
 
 app = Flask(__name__)
 app.config['DEBUG'] = True
 
-form = """
-<!DOCTYPE html>
-<html>
-    <head>
-        <style>
-            form {{
-                background-color: #eee;
-                padding: 20px;
-                margin: 0 auto;
-                width: 540px;
-                font: 16px sans-serif;
-                border-radius: 10px;
-            }}
-            textarea {{
-                margin: 10px 0;
-                width: 540px;
-                height: 120px;
-            }}
-        </style>
-    </head>
-    <body>
-        <form action="/" method="post">
-        Rotate by: 
-        <input type="text" name="rot"value="0"
-            <br>
-            <textarea type"text" name="text">{0}</textarea>    
-            <input type="submit" value="encrypt phrase">
-        </form>
+@app.route("/", methods=['GET'])
+def caesar():
+    return render_template('caesar.html')
 
-    </body>
-</html>
-"""
-@app.route("/", methods=['POST'])    
-
+@app.route("/encrypted", methods=['GET', 'POST'])    
 def encrypt():
-
-    rotation_number=int(request.form['rot'])
-    phrase=request.form["text"]
-    encryptedTxt = myCaesar.encrypt(phrase, rotation_number)
-    return form.format(encryptedTxt)
+    rotation_number = int(request.form['rotateBy'])
+    phrase = str(request.form['encryption'])
+    encryptedTxt = myCaesar.encrypt(rotation_number, phrase)
+    return render_template('encrypted.html', encryptedTxt=encryptedTxt, rotation_number=rotation_number, phrase=phrase)
     
-@app.route("/")    
-def index():
-    return form.format('')
 
-app.run()
+app.secret_key = 'asdA8975dhj/3yX R~XHH!jmN]LWX/,?RU'
+
+if __name__ == '__main__':
+    app.run()

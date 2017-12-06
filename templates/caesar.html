@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block container %}
+  <h1>Here is your secret message {{encryptedTxt}}</h1>
+    <div class="container">        
+        <form action="/encrypted" method="post">
+            Rotate by: 
+            <input type="text" name="rotateBy"value="{{rotate}}">
+                <br>
+                <textarea type"text" name="encryption" value="{{encrypt}}"></textarea>    
+                <input type="submit" value="encrypt phrase">
+            </form>
+    
+        </body>
+    </html>
+
+    {% endblock %}
