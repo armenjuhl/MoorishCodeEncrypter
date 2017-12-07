@@ -2,18 +2,21 @@
 <html lang="en">
     <title>Moorish Code</title>    
   <head>
-    <meta charset="utf-8">
+    <!-- <meta charset="utf-8"> -->
     
-        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
-  </head>
+        <link rel="stylesheet" type="text/css" media="screen" href="{{ url_for('static', filename='css/style.css') }}">
+        <!-- <link rel="stylesheet" type="text/css" media="screen" charset="utf-8" href="{{ url_for('static', filename='/css/style/reset.css?q=1280549780') }}"/> -->
+               
+        <div class="navbar-header" role="navigation">
+            <a class="navbar-header"href="/">Home   </a>            
+            <a class="navbar-header"href="/caesar">Encrypter #1   </a>
+            <a class="navbar-header"href="/vigenere">Encrypter #2   </a>
+              </div>
+        
+      </head>
   <body>
-      <!-- <div class="container">           -->
-    <div class="navbar-header" role="navigation">
-        <!-- <div> -->
-          <a href="/">Moorish Code Web Encrypter</a>
-        <!-- </div> -->
-      <!-- </div> -->
-    </div>
+      <h1 class="center">Moorish Code Web Encrypter</h1>
+      
       {% block container %}{% endblock %}
   </body>
 </html>

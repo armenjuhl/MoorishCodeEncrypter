@@ -1,5 +1,7 @@
+import os
 from flask import Flask, request, render_template
 import myCaesar 
+import myVigenere
 
 app = Flask(__name__)
 app.config['DEBUG'] = True
@@ -8,12 +10,40 @@ app.config['DEBUG'] = True
 def index():
     return render_template('index.html')
 
+@app.route("/caesar", methods=['GET'])
+def caesar():
+    return render_template('caesar.html')
+
 @app.route("/encrypted", methods=['POST'])    
 def encrypt():
     rotation_number=int(request.form['rot'])
     phrase=request.form["text"]
     encryptedTxt = myCaesar.encrypt(phrase, rotation_number)
-    return render_template('encrypted.html', encryptedTxt=encryptedTxt, rotation_number=rotation_number)
+    return render_template('caesarEncrypted.html', encryptedTxt=encryptedTxt, rotation_number=rotation_number)
+
+@app.route("/vigenere", methods=['GET'])
+def vigenere():
+    return render_template('vigenere.html')
+
+@app.route("/encrypt", methods=['POST'])
+def vig_encrypt():
+    text = request.form['vigText']
+    key = request.form['vigKey']
+    vigEncrypted = myVigenere.vigenere(text, key)
+    return render_template('vigEncrypted.html', vig_encrypted=vigEncrypted, key=key)
+
+# @app.context_processor
+# def override_url_for():
+#     return dict(url_for=dated_url_for)
+
+# def dated_url_for(endpoint, **values):
+#     if endpoint == 'static':
+#         filename = values.get('filename', None)
+#         if filename:
+#             file_path = os.path.join(app.root_path,
+#                                      endpoint, filename)
+#             values['q'] = int(os.stat(file_path).st_mtime)
+#     return url_for(endpoint, **values)
 
 app.run()
 # To Do: Incorporate index with base, 

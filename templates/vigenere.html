@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block container %}    
+
+    <p>Welcome to Encrypter #2! Here you can enter a secret message along with a key word to scramble your message. Make sure to remember your secret word. Your secret is safe with us. Enjoy </p>
+    <div class="container">
+        <h3 class="error">
+            {% if error %}
+            {{ error }}
+            {% endif %}
+        </h3>
+        <div class="center-form">
+        <form action="/encrypt" method="post">
+            Secret word: 
+            <input type="text" name="vigKey" value="">
+                <br>
+                <textarea type"text" name="vigText" class="textarea"></textarea>    
+                <input type="submit" value="Encrypt message">
+            </form>
+        </div>
+        </div>
+                
+{% endblock %}
