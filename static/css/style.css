@@ -1,4 +1,7 @@
-/* body {
+h1 {
+    color: blue;
+}
+body {
     margin: 0;    
     padding:0;
     background-image: url('https://s17.postimg.org/5u0f64pi7/background2.jpg');
@@ -10,7 +13,6 @@
     color: white;
     font-family: sans-serif;
     text-align: center;
-
 }
 
 .container {
@@ -66,9 +68,6 @@ textarea {
     background-image: url(/pix/samples/bg1.gif);
     border: 1px solid black;
     background-size: 100% 100%;
-    } 
-    
- 
+    }  
 }
-
-    */ */
+*/

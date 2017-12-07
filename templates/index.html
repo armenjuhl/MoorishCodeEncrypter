@@ -2,7 +2,7 @@
 
 {% block container %}    
     <h1 class="center">Moorish Code ≈ Web Encrypter</h1>
-    <p class="center">Welcome. Here you can enter a secret message with your choice of two different encryptions. Make sure to remember your secret key and enjoy. Your secret is safe with us. </p>
+    <p class="center">Welcome. Here you can enter a secret message with your choice of two different encryptions. Make sure to remember your secret key. We hope you enjoy. And remember, your secret is safe with us. </p>
     <div class="container">
         <h3 class="error">
             {% if error %}
@@ -10,7 +10,7 @@
             {% endif %}
         </h3>
         <div class="center-form">
-        <form action="/encrypted" method="post" class="form">
+        <form action="/encrypted" method="post">
             Secret key: 
             <input type="text" name="rot" value="">
                 <br>
