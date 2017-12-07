@@ -30,7 +30,7 @@ def vig_encrypt():
     text = request.form['vigText']
     key = request.form['vigKey']
     vigEncrypted = myVigenere.vigenere(text, key)
-    return render_template('vigEncrypted.html', vig_encrypted=vigEncrypted, key=key)
+    return render_template('vigEncrypted.html', vigEncrypted=vigEncrypted, key=key)
 
 # @app.context_processor
 # def override_url_for():

@@ -2,6 +2,12 @@
 p{
     color: white;
 }
+
+.homeText{
+    border:100px;
+    width:100px;
+    /* Bring this in a box */
+}
 body {
     /* margin: 0;    
     padding:0; */

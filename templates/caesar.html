@@ -2,7 +2,7 @@
 
 {% block container %}    
 
-<p>Welcome to Encrypter #1! Here you can enter a secret message with any real number. Make sure you write down your secret key. Enjoy and remember, your secret is safe with us. </p>
+<p class="homeText">Welcome to Encrypter #1! Here you can enter a secret message with any real number. Make sure you write down your secret key. Enjoy and remember, your secret is safe with us. </p>
     <div class="container">
         <h3 class="error">
             {% if error %}
@@ -11,7 +11,7 @@
         </h3>
         <div class="center-form">
         <form action="/encrypted" method="post">
-            Secret key: 
+            Secret number: 
             <input type="text" name="rot" value="">
                 <br>
                 <textarea type"text" name="text" class="textarea"></textarea>    

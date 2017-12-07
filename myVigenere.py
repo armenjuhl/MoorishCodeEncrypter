@@ -34,26 +34,35 @@ def rotate_character(char, rot):
 
 def vigenere(encrypt_text, encryption_key):
     encrypted_text = ""
-    # encryption_key += encryption_key += encryption_key += encryption_key += encryption_key += encryption_key += encryption_key += encryption_key += encryption_key += encryption_key += encryption_key
+    i = int(0)
     for word in encrypt_text:
         for char in word:
+            # if not char.isAlpha():    why?
             if char == ' ':
-                encrypted_text += ' '
+                encrypted_text += char        
             # alpha_num_placeholder = 1
             # int_alpha = int(alpha_num_placeholder)
             # int_alpha = alphabet_position(char)
-            text_alpha = alphabet_position(char)
-            for letter in encryption_key:
-                encryption_alpha = alphabet_position(letter)
-             # print(char, "alphabet number is", int_alpha)
-                encrypted_text += rotate_character(text_alpha, encryption_alpha)
+            # for letter in encryption_key:            
+
+            # text_int = alphabet_position(char)
+            #             
+            if encryption_key[i] == encryption_key[-1]:             
+                encryption_int = ord(encryption_key[i]) -97
+                encrypted_text += rotate_character(char, encryption_int)
+                i = 0
+            else:
+            # encryption_key = ord(encryption_key[i])
+                encryption_int = ord(encryption_key[i]) -97
+                encrypted_text += rotate_character(char, encryption_int)
+                i += 1
     return encrypted_text
 
 def main():
     if __name__ == "__main__":
         encrypt_text = input("Type a message:\n")
         print(encrypt_text)
-        encryption_key = (input("Enter the encryption key\n"))
+        encryption_key = (input("Enter the encryption word\n"))
         print(encryption_key)
         print(vigenere(encrypt_text, encryption_key))
 
