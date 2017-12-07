@@ -1,10 +1,10 @@
-from flask import Flask, request
+from flask import Flask, request, render_template
 import myCaesar 
 
 app = Flask(__name__)
 app.config['DEBUG'] = True
-
-form = """
+"""
+form = 
 <!DOCTYPE html>
 <html>
     <head>
@@ -25,9 +25,9 @@ form = """
         </style>
     </head>
     <body>
-        <form action="/" method="post">
+        <form action="/encrypted" method="post">
         Rotate by: 
-        <input type="text" name="rot"value="0"
+        <input type="text" name="rot" value="0">
             <br>
             <textarea type"text" name="text">{0}</textarea>    
             <input type="submit" value="encrypt phrase">
@@ -35,18 +35,24 @@ form = """
 
     </body>
 </html>
+@app.route("/", methods=['GET'])
+def index():
+    return form.format('')
 """
-@app.route("/", methods=['POST'])    
 
+@app.route("/", methods=['GET'])
+def index():
+    return render_template('index.html')
+
+@app.route("/encrypted", methods=['POST'])    
 def encrypt():
-
     rotation_number=int(request.form['rot'])
     phrase=request.form["text"]
     encryptedTxt = myCaesar.encrypt(phrase, rotation_number)
-    return form.format(encryptedTxt)
-    
-@app.route("/")    
-def index():
-    return form.format('')
+    return render_template('encrypted.html', encryptedTxt=encryptedTxt, rotation_number=rotation_number)
 
 app.run()
+# To Do: Incorporate index with base, 
+# figure out background image, 
+# structure, 
+# styling
