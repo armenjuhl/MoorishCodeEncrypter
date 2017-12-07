@@ -3,6 +3,37 @@ import myCaesar
 
 app = Flask(__name__)
 app.config['DEBUG'] = True
+
+@app.route("/", methods=['GET'])
+def index():
+    return render_template('index.html')
+
+@app.route("/encrypted", methods=['POST'])    
+def encrypt():
+    rotation_number=int(request.form['rot'])
+    phrase=request.form["text"]
+    encryptedTxt = myCaesar.encrypt(phrase, rotation_number)
+    return render_template('encrypted.html', encryptedTxt=encryptedTxt, rotation_number=rotation_number)
+
+app.run()
+# To Do: Incorporate index with base, 
+# figure out background image, 
+# structure, 
+# styling
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 """
 form = 
 <!DOCTYPE html>
@@ -39,20 +70,3 @@ form =
 def index():
     return form.format('')
 """
-
-@app.route("/", methods=['GET'])
-def index():
-    return render_template('index.html')
-
-@app.route("/encrypted", methods=['POST'])    
-def encrypt():
-    rotation_number=int(request.form['rot'])
-    phrase=request.form["text"]
-    encryptedTxt = myCaesar.encrypt(phrase, rotation_number)
-    return render_template('encrypted.html', encryptedTxt=encryptedTxt, rotation_number=rotation_number)
-
-app.run()
-# To Do: Incorporate index with base, 
-# figure out background image, 
-# structure, 
-# styling

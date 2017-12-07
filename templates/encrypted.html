@@ -1,9 +1,10 @@
 {% extends 'base.html' %}
 
 {% block container %}
-
+        <div class="container">
         <h3>Your secret key is {{rotation_number}} (This will be needed to unscramble your message)</h3>
         <h1>Your encrypted message is: </h1>
         <h1>{{encryptedTxt}}</h1>
-
+        <h3>Return to <span><a href="/">Encrypter</a></span></h3>
+        </div>
 {% endblock %}
