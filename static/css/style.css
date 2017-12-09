@@ -1,3 +1,36 @@
+/* header, footer { */
+    /* padding: 1em;
+    color: white;
+    background-color: black;
+    clear: left;
+    text-align: center; */
+    
+    .fixed-header {
+        top: 0;
+    }
+    .fixed-footer {
+        bottom: 0;
+    }
+
+    .fixed-header, .fixed-footer{        
+    width: 100%;
+    position: fixed;        
+    background: #FFFFFF;
+    padding: 10px 0;
+    color: #fff;
+}
+
+.container{
+    width: 80%;
+    margin: 0 auto; /* Center the DIV horizontally */
+}
+nav a{
+    color: #fff;
+    text-decoration: none;
+    padding: 7px 25px;
+    display: inline-block;
+}
+
 
 p{
     color: white;
@@ -6,9 +39,11 @@ p{
 .homeText{
     border:100px;
     width:100px;
-    /* Bring this in a box */
+    /* Bring this in  */
 }
 body {
+    padding-top: 60px;
+    padding-bottom: 40px;
     /* margin: 0;    
     padding:0; */
     background-image: url('https://s17.postimg.org/5u0f64pi7/background2.jpg');
@@ -17,18 +52,17 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     font-family: sans-serif;
-    text-align: center;
-}
-.color {
+    text-align:center;
     color: white;
 }
 
 .navbar-header {
     text-align: center;
-    color: #D87665;
+    /* color: #D87665; */
+    color: #EBAE1E;
     font-weight: 900;
     font-size: 18px;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     margin-right: 10px;
 }
 
@@ -66,9 +100,11 @@ body {
     font-style: bold;
 }
 
-.center {
+.title {
     text-align:center;
     color:#AD7607;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 35px;
 }
 
 
