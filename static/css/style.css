@@ -17,13 +17,15 @@
     position: fixed;        
     background: #FFFFFF;
     padding: 10px 0;
+    clear: left;
+    text-align: center;
     color: #fff;
 }
 
-.container{
+/* .container{
     width: 80%;
-    margin: 0 auto; /* Center the DIV horizontally */
-}
+    margin: 0 auto; Center the DIV horizontally
+} */
 nav a{
     color: #fff;
     text-decoration: none;
@@ -34,6 +36,8 @@ nav a{
 
 p{
     color: white;
+    text-align:center;
+    
 }
 
 .homeText{
@@ -105,6 +109,7 @@ body {
     color:#AD7607;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 35px;
+    padding-top:0px;
 }
 
 
