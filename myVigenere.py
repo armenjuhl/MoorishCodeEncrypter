@@ -36,23 +36,14 @@ def vigenere(encrypt_text, encryption_key):
     encrypted_text = ""
     i = int(0)
     for word in encrypt_text:
-        for char in word:
-            # if not char.isAlpha():    why?
+        for char in word:            
             if char == ' ':
-                encrypted_text += char        
-            # alpha_num_placeholder = 1
-            # int_alpha = int(alpha_num_placeholder)
-            # int_alpha = alphabet_position(char)
-            # for letter in encryption_key:            
-
-            # text_int = alphabet_position(char)
-            #             
+                encrypted_text += char                
             if encryption_key[i] == encryption_key[-1]:             
                 encryption_int = ord(encryption_key[i]) -97
                 encrypted_text += rotate_character(char, encryption_int)
                 i = 0
             else:
-            # encryption_key = ord(encryption_key[i])
                 encryption_int = ord(encryption_key[i]) -97
                 encrypted_text += rotate_character(char, encryption_int)
                 i += 1
