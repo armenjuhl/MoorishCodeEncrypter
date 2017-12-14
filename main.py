@@ -31,6 +31,7 @@ def vig_encrypt():
     key = request.form['vigKey']
     vigEncrypted = myVigenere.vigenere(text, key)
     return render_template('vigEncrypted.html', vigEncrypted=vigEncrypted, key=key)
+app.run()
 
 # @app.context_processor
 # def override_url_for():
@@ -44,8 +45,6 @@ def vig_encrypt():
 #                                      endpoint, filename)
 #             values['q'] = int(os.stat(file_path).st_mtime)
 #     return url_for(endpoint, **values)
-
-app.run()
 # To Do: Incorporate index with base, 
 # figure out background image, 
 # structure, 
