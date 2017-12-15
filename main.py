@@ -1,5 +1,5 @@
 import os
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, session, redirect
 import myCaesar 
 import myVigenere
 
@@ -28,74 +28,30 @@ def vigenere():
 @app.route("/encrypt", methods=['POST'])
 def vig_encrypt():
     text = request.form['vigText']
+    session['vig-text'] = text
     key = request.form['vigKey']
+    session['vig-key'] = key
     vigEncrypted = myVigenere.vigenere(text, key)
     return render_template('vigEncrypted.html', vigEncrypted=vigEncrypted, key=key)
+
+# @app.route("/decrypt1", methods=['GET'])
+#     return render_template('')
+
+@app.route("/decrypt2", methods=['GET', 'POST'])
+def decrypt2():
+    if request.method== 'GET':        
+        return render_template('decrypt2.html')
+    elif request.method== 'POST':
+        vigText = request.form['decKey2']
+        session['vig-text'] = vigText
+        vigKey = request.form['dec2-message']
+        return redirect('/vigDecrypted')
+
+@app.route("/vigDecrypted", methods=['GET'])
+def vigDecrypted():
+    vigText = session['vig-text']
+    return render_template('vigDecrypted.html', vigText=vigText)
+
+app.secret_key = 'A0Zr98j/3yX R~XHH!jmN]LWX/,?RU'
+
 app.run()
-
-# @app.context_processor
-# def override_url_for():
-#     return dict(url_for=dated_url_for)
-
-# def dated_url_for(endpoint, **values):
-#     if endpoint == 'static':
-#         filename = values.get('filename', None)
-#         if filename:
-#             file_path = os.path.join(app.root_path,
-#                                      endpoint, filename)
-#             values['q'] = int(os.stat(file_path).st_mtime)
-#     return url_for(endpoint, **values)
-# To Do: Incorporate index with base, 
-# figure out background image, 
-# structure, 
-# styling
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-"""
-form = 
-<!DOCTYPE html>
-<html>
-    <head>
-        <style>
-            form {{
-                background-color: #eee;
-                padding: 20px;
-                margin: 0 auto;
-                width: 540px;
-                font: 16px sans-serif;
-                border-radius: 10px;
-            }}
-            textarea {{
-                margin: 10px 0;
-                width: 540px;
-                height: 120px;
-            }}
-        </style>
-    </head>
-    <body>
-        <form action="/encrypted" method="post">
-        Rotate by: 
-        <input type="text" name="rot" value="0">
-            <br>
-            <textarea type"text" name="text">{0}</textarea>    
-            <input type="submit" value="encrypt phrase">
-        </form>
-
-    </body>
-</html>
-@app.route("/", methods=['GET'])
-def index():
-    return form.format('')
-"""

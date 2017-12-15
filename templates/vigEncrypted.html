@@ -1,10 +1,13 @@
 {% extends 'base.html' %}
 
 {% block container %}
-        <div class="homeText">
+        <div>
         <h3>Your secret word is {{key}} (This will be needed to unscramble your message)</h3>
-        <h1>Your encrypted message is: </h1>
-        <h1>{{vigEncrypted}}</h1>
-        <h3>Return to <span><a href="/vigenere">Encrypter #2</a></span></h3>
+        <h2>Your encrypted message is: </h2>
+        <h2>{{vigEncrypted}}</h2>
+
+        <h2>Send the receiver <a href="/decrypt2">this link</a> to decrypt your message</h2>
+
+        <h2>Return to <span><a class="color" href="/vigenere">Encrypter #2</a></span></h2>
         </div>
 {% endblock %}

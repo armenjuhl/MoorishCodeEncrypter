@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block container %}
+<div>
+
+<h2>Your decrypted message is: </h2>
+{% if vigText %}
+<h2>{{vigText}}</h2>
+{% else %}
+<h2>Please try again</h2>
+{% endif %}
+<br>
+<h2>Return to <span><a class="color" href="/vigenere">Encrypter #2</a></span></h2>
+</div>
+
+{% endblock %}
