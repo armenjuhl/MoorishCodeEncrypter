@@ -4,13 +4,13 @@
 <div>
 
 <h2>Your decrypted message is: </h2>
-{% if vigDecrypted %}
-<h2>{{vigDecrypted}}</h2>
+{% if caesTextDecrypted %}
+<h2>{{caesTextDecrypted}}</h2>
 {% else %}
 <h2>Please try again</h2>
 {% endif %}
 <br>
-<h2>Return to <span><a class="color" href="/vigenere">Encrypter #2</a></span></h2>
+<h2>Return to <span><a class="color" href="/caesar">Encrypter #1</a></span></h2>
 </div>
 
 {% endblock %}

@@ -123,3 +123,11 @@ textarea {
 href{
     color:white;
 }
+
+.moor {
+    /* align-items: right; */
+    border-radius: 100%;
+    /* padding: 20px;  */
+    /* width: 200px; */
+    height: 350px;    
+}

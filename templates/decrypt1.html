@@ -1,0 +1,10 @@
+{% extends 'base.html' %}{% block container %}
+<div class="center-form">
+<form action="/caesDecrypted">
+    Enter your secret number: <input type="text" name="decKey1" value=""><br>
+    Paste your secret message here: <input type="text" name="dec1-message" value=""><br>
+    <input type="submit" value="Submit">
+    </form>
+</div>
+<!-- Use Twilio to have secret message sent to a phone number -->
+{% endblock %}
