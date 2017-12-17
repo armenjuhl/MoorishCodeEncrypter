@@ -17,7 +17,7 @@ def rotate_character(char, rot):
         return chr(ord(char))
 
     if char.isupper():
-        alphabetRotate = alphabet_position(char) + (rot % 26)
+        alphabetRotate = alphabet_position(char)
         if alphabetRotate > 25:
                 alphabetRotate = alphabetRotate % 26
         alphabetRotate = alphabetRotate + 65
@@ -25,7 +25,7 @@ def rotate_character(char, rot):
         return newLetter
     
     if char.islower():
-        alphabetRotate = alphabet_position(char) + (rot % 26)
+        alphabetRotate = alphabet_position(char)
         if alphabetRotate > 25:
             alphabetRotate = alphabetRotate % 26
         alphabetRotate = alphabetRotate + 97
@@ -34,48 +34,36 @@ def rotate_character(char, rot):
 
 def vigenere(encrypt_text, encryption_key):
     encrypted_text = ""
-    i = int(0)
+    i = 0
     encryption_key = encryption_key.lower()
     for word in encrypt_text:
         for char in word:            
             if char == ' ':
                 encrypted_text += char                
+            encryption_int = ord(encryption_key[i]) -96
             if encryption_key[i] == encryption_key[-1]:
-                encryption_int = ord(encryption_key[i]) -97
                 encrypted_text += rotate_character(char, encryption_int)
                 i = 0
             else:
-                encryption_int = ord(encryption_key[i]) -97
                 encrypted_text += rotate_character(char, encryption_int)
                 i += 1
     return encrypted_text
 
+
 def decryptVigenere(encrypt_text, encryption_key):
     encrypted_text = ""
-    i = int(0)
+    i = 0
     decNum = 0
-    encryption_key = encryption_key.lower()
     for word in encrypt_text:
         for char in word:                        
             if char == ' ':
-                encrypted_text += char                
-            # if encryption_key[i] == encryption_key[-1]:
-            #     encryption_int = ord(encryption_key[i]) -96
-            #     if encryption_int % 26 == 0:
-            #         decNum = encryption_int
-            #     else:
-            #         decNum = 26 - encryption_int
-            #     encrypted_text += rotate_character(char, decNum)
-            #     i = 0
-            # else:
-            encryption_int = ord(encryption_key[i]) -96
-            if encryption_int % 26 == 0:
-                decNum = 0
-            else:
-                decNum = 26 - encryption_int
+                encrypted_text += char     
+            encryption_letter = encryption_key[i]
+            encryption_int = alphabet_position(encryption_letter) +1
+            decNum = 26 - encryption_int 
             if encryption_key[i] != encryption_key[-1]:
-                i += 1
-            else:
+                i = i + 1
+            elif encryption_key[i] == encryption_key[-1]:
                 i = 0                    
             encrypted_text += rotate_character(char, decNum)
     return encrypted_text

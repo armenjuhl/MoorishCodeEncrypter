@@ -34,11 +34,11 @@ def decrypt1():
         session['caesText'] = caesText
         return redirect('/caesDecrypted')
 
-@app.route("/caesDecrypted", methods=['GET'])
+@app.route("/caesDecrypted", methods=['GET', 'POST'])
 def caesDecrypted():
     caesText2 = session['caesText']
     key = session['caesKey']
-    key = (key * -1) +1
+    key = (key * -1) 
     caesTextDecrypted = myCaesar.encrypt(caesText2, key)
     return render_template('caesDecrypted.html', caesTextDecrypted=caesTextDecrypted)
 
