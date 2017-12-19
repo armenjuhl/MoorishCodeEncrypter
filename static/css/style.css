@@ -15,12 +15,11 @@
     .fixed-header, .fixed-footer{        
     width: 100%;
     position: fixed;        
-    background: #FFFFFF;
+    background: #E4B506;
     padding: 10px 0;
     color: #fff;
     clear: left;
     text-align: center;
-    color: #fff;
     margin: -10px;
     
 }
@@ -80,8 +79,8 @@ body {
 
 .navbar-header {
     text-align: center;
-    /* color: #D87665; */
-    color: #EBAE1E;
+    color: white;
+    /* color: #EBAE1E; */
     font-weight: 900;
     font-size: 18px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
