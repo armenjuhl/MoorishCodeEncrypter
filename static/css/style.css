@@ -1,10 +1,3 @@
-/* header, footer { */
-    /* padding: 1em;
-    color: white;
-    background-color: black;
-    clear: left;
-    text-align: center; */
-    
     .fixed-header {
         top: 0;
     }
@@ -26,7 +19,7 @@
 
 .container{
     width: 80%;
-    margin: 0 auto; /* Center the DIV horizontally */
+    margin: 0 auto; 
 }
 nav a{
     color: #fff;
@@ -47,26 +40,17 @@ p{
     font-size: 19px;
     color: #FFF;
     text-align: center;
-    padding: 0px 295px;
+    padding: 0px 312px;
     margin: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
     }
     
-    /* width:550px;
-    height: 90px;
-    line-height: 23px;
-    text-align: center;
-    border: 1px; */
-
-
 
 body {
     padding-top: 60px;
     padding-bottom: 40px;
-    /* margin: 0;    
-    padding:0; */
     background-image: url('https://s17.postimg.org/5u0f64pi7/background2.jpg');
     background-size: cover;
     background-attachment: fixed;
@@ -115,21 +99,17 @@ href{
 }
 
 .moor {
-    /* align-items: right; */
     border-radius: 100%;
-    /* padding: 20px;  */
-    /* width: 200px; */
     height: 350px;    
 }
 
 .navbar-header {
     text-align: center;
     color: white;
-    /* color: #EBAE1E; */
     font-weight: 900;
     font-size: 18px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    margin-right: 13px;
+    margin-right: 16px;
 }
 
 #menu, #menu ul {
@@ -148,6 +128,8 @@ href{
     float: left;
     position: relative;
     list-style: none;
+    color:#AD7607;
+    
 }
 #menu > li:hover > ul {
     display: block;
@@ -158,10 +140,11 @@ href{
 }
 #menu li a {
     display:block;
-    /* padding:10px 10px; */
+    padding:12px 12px;
     text-decoration:none;
     font-weight:bold;
     white-space: nowrap;
+    margin: -8px;
 }
 #menu li a:hover {
     color:#FFFFFF;
