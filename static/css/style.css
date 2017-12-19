@@ -77,15 +77,6 @@ body {
     color: white;
 }
 
-.navbar-header {
-    text-align: center;
-    color: white;
-    /* color: #EBAE1E; */
-    font-weight: 900;
-    font-size: 18px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    margin-right: 10px;
-}
 
 .center-form {
     text-align: center;
@@ -129,4 +120,49 @@ href{
     /* padding: 20px;  */
     /* width: 200px; */
     height: 350px;    
+}
+
+.navbar-header {
+    text-align: center;
+    color: white;
+    /* color: #EBAE1E; */
+    font-weight: 900;
+    font-size: 18px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin-right: 13px;
+}
+
+#menu, #menu ul {
+    margin:0 auto;
+    padding:0;
+    float: right;
+}
+#menu {
+    display: inline-block;
+    min-width: 600px;
+    list-style:none;
+    text-align: center;
+
+}
+#menu li {
+    float: left;
+    position: relative;
+    list-style: none;
+}
+#menu > li:hover > ul {
+    display: block;
+}
+#menu > li > ul {
+    display: none;
+    position: absolute;
+}
+#menu li a {
+    display:block;
+    /* padding:10px 10px; */
+    text-decoration:none;
+    font-weight:bold;
+    white-space: nowrap;
+}
+#menu li a:hover {
+    color:#FFFFFF;
 }
