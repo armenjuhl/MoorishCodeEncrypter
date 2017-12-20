@@ -8,7 +8,7 @@
 2: Download or fork a copy of the repository.<br>
 3: Using your shell change your directory (cd <directory>) to your local repository folder of the project<br>
 4: Enter the command $ python main.py <br>
-5: Copy the localhost address that shows up and enter it into your web browser of choice (Google Chrome or Firefox is recommended) 
+5: Copy the localhost address that shows up and enter it into your web browser of choice (Google Chrome or Firefox is recommended) <br>
 6: Enjoy exploring the website and using encrypter 1 and 2!
 </p>
 
