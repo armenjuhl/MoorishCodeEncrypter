@@ -1,10 +1,10 @@
 def alphabet_position(letter):
     if letter.isupper():       
-        upperc_position_letter = ord(letter) - 64      
+        upperc_position_letter = ord(letter) - 64     
         return upperc_position_letter
 
     if letter.islower():
-        lowerc_position_letter = ord(letter) - 96     
+        lowerc_position_letter = ord(letter) - 96    
         return lowerc_position_letter
     
 def rotate_character(char, rot):
@@ -38,6 +38,15 @@ def encrypt(text, rot):
         if char == " ":
             new_string += " "
         new_string = new_string + rotate_character(char, rot)
+    return new_string
+
+def decrypt(text, rot):
+    new_rot = 26 - rot % 26
+    new_string = ""
+    for char in text:
+        if char == " ":
+            new_string += " "
+        new_string = new_string + rotate_character(char, new_rot)
     return new_string
 
 def main():

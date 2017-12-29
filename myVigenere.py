@@ -50,30 +50,35 @@ def vigenere(encrypt_text, encryption_key):
     return encrypted_text
 
 
-def decryptVigenere(encrypt_text, encryption_key):
+def decryptVigenere(decrypt_text, decryption_key):
     encrypted_text = ""
     i = 0
-    decNum = 0
-    for word in encrypt_text:
-        for char in word:                        
+    decryption_key = decryption_key.lower()
+    for word in decrypt_text:
+        for char in word:            
             if char == ' ':
-                encrypted_text += char     
-            encryption_letter = encryption_key[i]
-            encryption_int = alphabet_position(encryption_letter) +1
-            decNum = 26 - encryption_int 
-            if encryption_key[i] != encryption_key[-1]:
-                i = i + 1
-            elif encryption_key[i] == encryption_key[-1]:
-                i = 0                    
-            encrypted_text += rotate_character(char, decNum)
+                encrypted_text += char                
+            encryption_int = ord(decryption_key[i]) -96
+            encryption_int = 26 - encryption_int % 26
+            if decryption_key[i] == decryption_key[-1]:
+                encrypted_text += rotate_character(char, encryption_int)
+                i = 0
+            else:
+                encrypted_text += rotate_character(char, encryption_int)
+                i += 1
     return encrypted_text
 
 def main():
     if __name__ == "__main__":
         encrypt_text = input("Type a message:\n")
         print(encrypt_text)
-        encryption_key = (input("Enter the encryption word\n"))
+        encryption_key = input("Enter the encryption word\n")
         print(encryption_key)
         print(vigenere(encrypt_text, encryption_key))
+        decrypt_text = input("Type message to decrypt")
+        print(decrypt_text)
+        decryption_key = input("Enter the decryption word\n")
+        print(decryption_key)
+        print(decryptVigenere(decrypt_text, decryption_key))
 
 main()
