@@ -4,8 +4,8 @@
 <div>
 
 <h2>Your decrypted message is: </h2>
-{% if session['vigDecrypted'] %}
-<h2>{{session['vigDecrypted']}}</h2>
+{% if vigDecrypted %}
+<h2>{{vigDecrypted}}</h2>
 {% else %}
 <h2>Please try again</h2>
 {% endif %}
