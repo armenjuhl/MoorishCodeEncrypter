@@ -39,7 +39,3 @@
 </p>
 
 <h4>Final notes</h4>
-<p>
-Notice that the decrypters drop down from the nav bar when you hover over encrypter 1 or 2.
-The decryption functionality is still being worked out.
-</p>
